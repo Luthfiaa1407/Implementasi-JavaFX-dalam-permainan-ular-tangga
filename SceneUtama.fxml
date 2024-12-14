@@ -10,12 +10,13 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="932.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectulartangga.Controller">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="737.0" prefWidth="1157.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectulartangga.Controller">
    <children>
       <ImageView fitHeight="736.0" fitWidth="736.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@papan.png" />
-         </image></ImageView>
+         </image>
+      </ImageView>
       <GridPane fx:id="papan" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="736.0" prefWidth="736.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -54,16 +55,30 @@
             </ImageView>
          </children>
       </GridPane>
-      <ImageView fx:id="dadu1" fitHeight="60.0" fitWidth="60.0" layoutX="792.0" layoutY="282.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="766.0" fitWidth="420.0" layoutX="737.0" layoutY="-31.0">
+         <image>
+            <Image url="@background.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="dadu1" fitHeight="101.0" fitWidth="101.0" layoutX="914.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@dadu1.png" />
          </image>
       </ImageView>
-      <Button fx:id="kocokDadu" layoutX="783.0" layoutY="365.0" mnemonicParsing="false" onAction="#rollDadu" text="Kocok Dadu" />
-      <Label fx:id="playerTurn" layoutX="932.0" layoutY="288.0" text="Giliran Player1" style="-fx-font-weight: bold; -fx-font-family: 'Press Start 2P'; -fx-text-fill: #77DD77">
+      <Button fx:id="kocokDadu" layoutX="881.0" layoutY="275.0" mnemonicParsing="false" onAction="#rollDadu" prefHeight="78.0" prefWidth="166.0" text="Kocok Dadu" textFill="#0d42ff">
          <font>
-            <Font size="32.0" />
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <Label fx:id="playerTurn" layoutX="851.0" layoutY="88.0" prefHeight="58.0" prefWidth="238.0" style="-fx-font-weight: bold; -fx-font-family: 'Press Start 2P'; -fx-text-fill: #FFFFFF; -fx-font-style: italic;" text="Giliran Player1">
+         <font>
+            <Font size="31.0" />
          </font>
       </Label>
+      <Button fx:id="resetButton" layoutX="857.0" layoutY="660.0" mnemonicParsing="false" onAction="#handleReset" prefHeight="67.0" prefWidth="185.0" text="Reset" textFill="RED">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
