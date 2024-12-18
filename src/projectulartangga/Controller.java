@@ -31,12 +31,13 @@ public class Controller {
     @FXML
     private ImageView player2;
     
-    
     @FXML
     private Label playerTurn;
 
     @FXML
     private GridPane papan;
+
+    private MediaPlayer mediaPlayer;
 
     private static final String[] DICE_IMAGES = {
             "dadu1.png",
@@ -234,6 +235,7 @@ public class Controller {
 
     private void showWinnerScreen(String winner) {
         try {
+            playWinMusic()
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Winner.fxml"));
             Parent root = loader.load();
 
@@ -276,4 +278,36 @@ public class Controller {
             transition.play();
         }
     }
+
+    @FXML
+    private void handleReset(ActionEvent event) {
+    // Reset posisi pemain ke awal
+    player1Pos = 1;
+    player2Pos = 1;
+
+    // Update posisi grafis pemain pada papan
+    updatePlayerPosition(player1, player1Pos);
+    updatePlayerPosition(player2, player2Pos);
+
+    // Reset giliran pemain ke Player 1
+    player1Turn = true;
+    updatePlayerTurnLabel();
+
+    }
+
+    private void playWinMusic() {
+    try {
+        URL musicUrl = getClass().getResource("Suara_Kemenangan.mp3");
+        if (musicUrl != null) {
+            Media sound = new Media(musicUrl.toString());
+            mediaPlayer = new MediaPlayer(sound);
+            mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+            mediaPlayer.play();
+        } else {
+            System.err.println("File musik tidak ditemukan.");
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
 }
